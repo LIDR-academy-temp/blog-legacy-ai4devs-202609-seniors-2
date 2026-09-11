@@ -145,9 +145,9 @@ Con el botón **Fork** de arriba. Sobre un clon directo no tienes permiso de esc
 vas a crear una rama y commitear.
 
 ```bash
-git clone git@github.com:<tu-usuario>/blog-legacy-ai4devs.git
-cd blog-legacy-ai4devs
-git remote add upstream git@github.com:LIDR-academy/blog-legacy-ai4devs.git
+git clone git@github.com:<tu-usuario>/blog-legacy-ai4devs-202609-seniors-2.git
+cd blog-legacy-ai4devs-202609-seniors-2
+git remote add upstream git@github.com:LIDR-academy/blog-legacy-ai4devs-202609-seniors-2.git
 git fetch upstream
 git checkout -b s6/start upstream/s6/start
 ```

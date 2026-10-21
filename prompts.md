@@ -22,14 +22,27 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Sonnet 5.5 xHigh
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
+Se necesita una auditoria de la feature de comentarios, en busca de fallos o incosistencias.
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Crea una tabla y para cada hallazgo crea una fila con el siguiente formato de tabla:
+
+1. Qué es. Una frase. Si necesitas tres, es que hay dos hallazgos.
+
+2. Dónde está, con la línea que lo demuestra. Sin esta casilla, la fila no se escribe.
+
+3. Qué se rompe, y quién lo nota. El efecto concreto y a quién le llega. "Nadie todavía" es una respuesta válida y buena.
+
+4. Cuántos sitios hay que tocar. Contados, no estimados.
+
+5. ¿Se deshace con un revert? Sí o no, y si es que no, por qué no.
+
+6. ¿Bloquea o desbloquea a otro hallazgo? Nombrando al otro. "A ninguno" es la respuesta más frecuente.
+
+I guárdalo en docs/auditoria/comentarios.md
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** funcionó a la primera 

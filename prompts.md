@@ -26,10 +26,18 @@ Borra el ejemplo de abajo cuando escribas el primero.
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
+ primero la precedencia (lo que abarata o desbloquea a otro hallazgo va antes), y dentro de cada nivel, el daño dividido por el radio. Si un hallazgo tiene el daño más alto y la precedencia más baja a la vez, se parte en dos filas, una contención que corta el daño hoy y el arreglo de fondo que espera su turno. Y las propuestas que nadie ha medido todavía van fuera de la tabla, con lo que habría que medir escrito al lado.
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
-```
+El formato no es negociable: una fila por hallazgo, con estas seis casillas.
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+1. Qué es. Una frase. Si necesitas tres, es que hay dos hallazgos.
+
+2. Dónde está, con la línea que lo demuestra. Sin esta casilla, la fila no se escribe.
+
+3. Qué se rompe, y quién lo nota. El efecto concreto y a quién le llega. "Nadie todavía" es una respuesta válida y buena.
+
+4. Cuántos sitios hay que tocar. Contados, no estimados.
+
+5. ¿Se deshace con un revert? Sí o no, y si es que no, por qué no.
+
+6. ¿Bloquea o desbloquea a otro hallazgo? Nombrando al otro. "A ninguno" es la respuesta más frecuente

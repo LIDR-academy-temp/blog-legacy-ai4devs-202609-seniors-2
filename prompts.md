@@ -79,3 +79,22 @@ No están en el archivo. El agente las vio y me las pasó:
 Rama y commit
 El agente avisó de que la rama actual es auditoria-cedl, no s6/start. Lo confirmé, y apunta al mismo commit (ad34f0e). No he hecho commit. Si quieres, lo hago en una rama docs/ con un commit docs: que añada solo ese archivo.
 
+---
+
+## Prompt 2
+
+**Modelo:** sonnet 5.5 xHigh
+**Herramienta:** Claude Code
+
+```
+hay que hacer commit de el archivo de prompts.md y comentarios.md que fueron modificados.
+```
+
+**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+Hice el commit 66e9288 en la rama auditoria-cedl, no en main. El hook de tests no bloqueó el commit.
+
+- docs/auditoria/comentarios.md: archivo nuevo con la auditoría.
+- prompts.md: registra el prompt de la auditoría y lo que salió. Además del prompt, el archivo incluye mis dos informes de esta sesión, que quedaron pegados en «Qué salió». Si quieres solo el prompt y una línea de resultado, lo recorto en un commit aparte.
+
+Solo añadí esas dos rutas con git add. docs/make_test.md sigue sin trackear porque no lo mencionaste. No he abierto PR, que según CLAUDE.md es el último paso explícito. Dime si quieres que lo haga con gh pr create.
+

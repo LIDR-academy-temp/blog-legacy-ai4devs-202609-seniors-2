@@ -22,14 +22,29 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** claude-opus-5-5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+❯ Quiero un resumnen de los ultimos commits y que busques en que archivos podes encontrar la palabra "comentario" o "comentarios"
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** 
+```
+Me encontro 3 commits y en la busqueda y 15 arhivos con la palabra comentario incluidos algunos archivos de configuracion que olvide pedir que no los tenga en cuenta.
+```
+
+## Prompt 2
+
+**Modelo:** claude-opus-5-5
+**Herramienta:** Claude Code
+
+```
+Sos un auditor Senior y necesito que elabores un informe exclusivamente sobre la feature de comentarios. El analisis debe tener en cuenta rutas en la API, tabla en la base de datos y lo que la web enseña de la feature, los flujos de crear, editar, borrar y listar
+  comentarios. No quiero que revises nada mas alla de "Comentarios" salvo que alguna relacion lo requiera.
+```
+
+**Qué salió:**
+```
+Me encontro 3 commits y en la busqueda y 15 arhivos con la palabra comentario incluidos algunos archivos de configuracion que olvide pedir que no los tenga en cuenta.
+```

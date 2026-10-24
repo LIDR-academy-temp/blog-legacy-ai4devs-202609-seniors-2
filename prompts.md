@@ -1,35 +1,19 @@
 # Prompts
 
-Aquí van **todos los prompts que lanzaste** para hacer el ejercicio, en el orden en que los
-lanzaste, con el modelo y la herramienta de cada uno.
-
-Esto no es papeleo. Lo que se revisa es **cómo pediste las cosas**, no solo lo que salió: un
-resultado flojo con un prompt bueno y un resultado flojo con un prompt vago necesitan feedback
-distinto, y sin este archivo no se distinguen.
-
-## Cómo rellenarlo
-
-- Un apartado `## Prompt N` por cada prompt.
-- **Pega el prompt tal cual lo lanzaste**, dentro del bloque de código, aunque ocupe diez líneas
-  y aunque tenga faltas. No lo reescribas para que quede bien: el que arreglaste mentalmente
-  después no es el que lanzaste.
-- Incluye también los que **no funcionaron**. Suelen ser los más útiles de leer.
-- `Modelo` y `Herramienta` en todos. Si cambiaste de una a otra a mitad, se nota aquí.
-
-Borra el ejemplo de abajo cuando escribas el primero.
-
----
-
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Sonnet 5.5 Medium
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Audit (according to the info and guidelines in CLAUDE.md) the comments feature to scout for errors in the whole stack: API, database and frontend. Don't stray from this scope. Document every finding in @docs/auditoria/comentarios.md, in a table with a row for each one and the following columns:
+  - The finding itself in a short phrase. If you can't keep it short, we're likely talking about more than one finding.
+  - Where it is, including the file path and the line number. Can include the line itself or a fragment at your discretion.
+  - Severity: what the breach is and who notices it, if anyone. 'No one yet' is a valid answer.
+  - Radius: number of places that need to be changed to repair the finding. Mention them explicitly too, after the number.
+  - Can the fix be undone with a git revert, should the fix itself breaks something else?
+  - Prereqs: any findings that should be fixed before, because of need or conveniency
+    Sort the findings in the table so that prereqs come before their dependent findings, and then in order of decreasing severity divided by radius. If a finding has a high severity but it's either too complicated to fix (eg large radius) or it depends on other findings such that its fix will get postponed, introduce an additional row associated with the same finding, that does not depend on any prereqs and serves as a workaround to mitigate it. The original row with its dependencies remains as the real fix.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** Identificó 27 hallazgos más 5 contenciones. También comentó sobre 2 hallazgos más que no incluyó por estar fuera del alcance.

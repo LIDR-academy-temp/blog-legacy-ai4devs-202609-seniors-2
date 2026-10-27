@@ -1,35 +1,29 @@
-# Prompts
-
-Aquí van **todos los prompts que lanzaste** para hacer el ejercicio, en el orden en que los
-lanzaste, con el modelo y la herramienta de cada uno.
-
-Esto no es papeleo. Lo que se revisa es **cómo pediste las cosas**, no solo lo que salió: un
-resultado flojo con un prompt bueno y un resultado flojo con un prompt vago necesitan feedback
-distinto, y sin este archivo no se distinguen.
-
-## Cómo rellenarlo
-
-- Un apartado `## Prompt N` por cada prompt.
-- **Pega el prompt tal cual lo lanzaste**, dentro del bloque de código, aunque ocupe diez líneas
-  y aunque tenga faltas. No lo reescribas para que quede bien: el que arreglaste mentalmente
-  después no es el que lanzaste.
-- Incluye también los que **no funcionaron**. Suelen ser los más útiles de leer.
-- `Modelo` y `Herramienta` en todos. Si cambiaste de una a otra a mitad, se nota aquí.
-
-Borra el ejemplo de abajo cuando escribas el primero.
-
----
-
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Opus 5.5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
+Necesito una auditoría de la feature de comentarios del blog. Solo comentarios: crear, editar, borrar y listar. Eso incluye las rutas de la API, la tabla en la base de datos y lo que la web muestra o manda. Nada de posts, autores, categorías ni etiquetas. Si ves algo raro fuera de comentarios, como mucho lo apuntas en una línea al final y sigues. No me propongas auditar el resto.
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+No toques el código, esto es solo lectura. Lo único que escribes es docs/auditoria/comentarios.md. El resultado va en ese archivo, no en el chat.
+
+Ve escribiendo el archivo a medida que avanzas, no al final. Primero haz un mapa rápido de dónde vive la feature: las rutas con su handler (archivo:línea), dónde se define la tabla y qué componentes de la web tocan comentarios. Después vas metiendo hallazgos uno a uno y guardando.
+
+Si te digo que pares, paras ahí mismo y dejas el archivo como esté. Si una casilla no la has comprobado abriendo el archivo, se queda vacía. No la rellenes con lo que "seguramente" pasa.
+
+Cada hallazgo es una fila de una tabla con estas columnas:
+
+- Qué es: una frase. Si no cabe en una, son dos hallazgos.
+- Dónde está: archivo:línea y la línea copiada tal cual. Sin esto no hay fila.
+- Qué se rompe y quién lo nota: el efecto real y a quién le llega. "Nadie todavía" vale.
+- Sitios a tocar: contados de verdad, con la lista de archivo:línea. Nada de "unos 3 o 4".
+- ¿Se deshace con un revert?: sí o no. Si es no, di por qué (migración, datos ya rotos, etc).
+- ¿Bloquea o desbloquea otro?: di cuál (#). Lo normal es "a ninguno".
+
+Para el orden: primero lo que desbloquea o abarata otros hallazgos. Dentro de eso, lo que más daño hace con menos sitios que tocar va arriba. Si algo hace muchísimo daño pero depende de que se arreglen otras cosas antes, pártelo en dos filas: una contención rápida que corte el daño ya, arriba, y el arreglo de fondo en su sitio.
+
+Lo que sean ideas sin evidencia (por ejemplo "el listado igual va lento") no va en la tabla. Ponlo en una sección aparte con qué habría que medir para saber si es real.
+
+Al final del archivo pon si quedó completa o en qué te quedaste.
 ```
-
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
